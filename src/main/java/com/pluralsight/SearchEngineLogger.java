@@ -35,7 +35,9 @@ public class SearchEngineLogger {
                     break;
                 } else {
                     LocalDateTime searchTime = LocalDateTime.now();
-                    System.out.println(searchTime);
+                    String formattedSearchTime = searchTime.format(formatter);
+                    bufferedWriter.write(formattedSearchTime + " search : " + search);
+                    bufferedWriter.newLine();
                 }
             }
         } catch (IOException e) {
